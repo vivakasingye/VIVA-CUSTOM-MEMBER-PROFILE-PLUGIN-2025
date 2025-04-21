@@ -1,0 +1,218 @@
+/* Main Grid Layout */
+.viva-grid {
+    display: grid;
+    gap: 30px;
+    padding: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Column Variations */
+.viva-grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+.viva-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+.viva-grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* Card Styling */
+.viva-card {
+	background: #fff;
+	border-radius: 12px;
+	overflow: hidden;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+	transition: all 0.3s ease;
+	position: relative;
+	border: 1px solid rgba(0, 0, 0, 0.05);
+	display: flex;
+	flex-direction: column;
+	height: 452px;
+}
+
+/* Image Container - Preserves Original Resolution */
+.viva-img-container {
+    /*! height: 300px; */
+    /*! width: 100%; */
+    /*! overflow: hidden; */
+    /*! position: relative; */
+    /*! display: flex; */
+    /*! align-items: center; */
+    /*! justify-content: center; */
+    /*! background: #f8f9fa; */
+}
+
+/* Image Styles - Maintains Original Quality */
+.viva-img {
+	max-width: 100%;
+	max-height: 289px;
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+	display: block;
+	transition: transform 0.3s ease;
+	object-position: top;
+	height: 300px;
+	/* background: gray; */
+}
+
+/* Content Area */
+.viva-info {
+    padding: 10px;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Title Styling */
+h3.viva-title {
+    font-size: 17px !important;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    color: #2c3e50;
+text-transform:uppercase!important;
+    line-height: 1.3;
+}
+
+/* Role and Courses */
+.viva-role {
+    font-size: 15px;
+    font-weight: 600;
+    color: #e74c3c;
+    margin-bottom: 10px;
+}
+.viva-courses {
+	font-size: 12px;
+	color: #000;
+	margin-bottom: 15px;
+	line-height: 20px;
+	text-transform: uppercase;
+}
+
+/* Badge Styling */
+.viva-badge {
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    background: rgb(54, 52, 142);
+    color: white;
+    padding: 1px 12px;
+    border-radius: 0;
+    font-size: 11px;
+    font-weight: 600;
+    z-index: 2;
+}
+
+/* Filter Buttons */
+.viva-filter {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+    padding: 0 20px;
+}
+
+.viva-filter-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #f1f1f1;
+    color: #333;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.viva-filter-btn:hover,
+.viva-filter-btn.active {
+    background: #e74c3c;
+    color: white;
+}
+
+/* Slider Styles */
+.viva-slider {
+    margin: 0 -15px 40px;
+    position: relative;
+}
+
+.viva-slide {
+    padding: 0 15px;
+}
+
+.viva-prev, .viva-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    color: #e74c3c;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.viva-prev:hover, .viva-next:hover {
+    background: #e74c3c;
+    color: white;
+}
+
+.viva-prev {
+    left: -20px;
+}
+
+.viva-next {
+    right: -20px;
+}
+
+/* Hover Effects */
+.viva-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.viva-card:hover .viva-img {
+    transform: scale(1.03);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .viva-grid-4 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .viva-grid-3,
+    .viva-grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .viva-img-container {
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .viva-grid {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .viva-img-container {
+        height: 200px;
+    }
+    
+    .viva-prev {
+        left: 5px;
+    }
+    
+    .viva-next {
+        right: 5px;
+    }
+}
